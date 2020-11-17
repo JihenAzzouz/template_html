@@ -1,0 +1,75 @@
+ .jumbotron,footer {
+            background-color: #b9bcc2;
+            color: #ffffff;
+        }
+
+        section {
+        
+            display: flex;
+
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 20px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        .form-horizontal {
+            border: none !important
+        }
+        #message , #name-msg , #user-msg , #pwdC-msg , #email-msg 
+        {
+            display: none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        #message p {
+            padding: 10px 35px;
+            font-size: 18px;
+        }
+
+
+        .valid>* {
+            color: green;
+        }
+
+
+        .invalid>* {
+            color: red;
+        }

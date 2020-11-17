@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>WorkSpace</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="workspace.js"></script>
+ <link rel="stylesheet" src="espace.css">
+    <script>
+        $(document).ready(function () {
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                if (this.hash !== "") {
+
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        })
+    
+    </script>
+</head>
+
+<body class="bg-grey">
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">WorkSpace</a>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                            <a href="#register">Register</a>
+                        </li>
+                        <li>
+                            <a href="#login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <img src="cover.jpg" width="100%" height="600" />
+        </div>
+        <div class="jumbotron text-center">
+            <h1>Company</h1>
+            <p>We specialize in blablabla</p>
+            <form class="form-inline">
+                <div class="input-group">
+                    <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger">Subscribe</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <br>
+        <br>
+        <section class="container-fluid bg-grey" id="login">
+            <div class="col-xs-6">
+                <img src="https://freedesignfile.com/upload/2017/01/Girl-watching-movies-on-a-computer-HD-picture.jpg" class="img-responsive"
+                    alt="" width="700" height="100%">
+            </div>
+
+
+
+            <div class="col-xs-6 ">
+
+                <form class="well form-horizontal" action=" " method="post" id="login_form">
+                    <fieldset>
+                        <legend>
+                            <center>
+                                <h2>
+                                    <b>Login Form</b>
+                                </h2>
+                            </center>
+                        </legend>
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> ID</label>
+                            <div class="col-md-4 ">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input name="first_name" class="form-control" placeholder="ID" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Password</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input name="password" placeholder="password" class="form-control" type="password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"></label>
+                            <div class="col-md-4 ">
+
+                                <button type="submit" class="btn btn-warning">Log In
+                                    <span class="glyphicon glyphicon-send"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <label class="control-label col-md-7">
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </form>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <br>
+        <section class="container-fluid" id="register">
+            <div class="col-xs-6">
+                <img src="https://ak9.picdn.net/shutterstock/videos/10233779/thumb/1.jpg" class="img-responsive" alt="" width="700" height="100%">
+            </div>
+            <div class=" col-xs-6">
+
+                <form class="well form-horizontal" action=" " method="post" id="contact_form">
+                    <fieldset>
+                        <legend>
+                            <center>
+                                <h2>
+                                    <b>Registration Form</b>
+                                </h2>
+                            </center>
+                        </legend>
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Name</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input name="first_name" id='fname' placeholder="First Name" class="form-control" type="text" onfocus="block_msg('name-msg')" onblur="hide_msg('name-msg')" onkeyup='checkName()'>
+                                </div>
+                            </div>
+                            <div id="name-msg">
+
+                                    <h4> Name contains at least 5 caracters </h4>
+                                   
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Username</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input name="user_name" id="user_name" placeholder="Username" class="form-control" type="text" onfocus="block_msg('user-msg')" onblur="hide_msg('user-msg')" onkeyup='checkID()'>
+                                </div>
+                            </div>
+                            <div id="user-msg">
+
+                                    <h4 >Pseudo name contains at least 5 caracters </h4>
+                                   
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Password</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input name="user_password" id="pwd" placeholder="Password" class="form-control" type="password" onfocus="block_msg('message')" onblur="hide_msg('message')" onkeyup='pswd_validation()'>
+                                </div>
+                            </div>
+                            <div id="message">
+
+                                <h4>Password must contain the following:</h4>
+                                <p id="letter" class="invalid">A
+                                    <b>lowercase</b> letter</p>
+                                <p id="capital" class="invalid">A
+                                    <b>capital (uppercase)</b> letter</p>
+                                <p id="number" class="invalid">A
+                                    <b>number</b>
+                                </p>
+                                <p id="length" class="invalid">Minimum
+                                    <b>8 characters</b>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Confirm Password</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input name="confirm_password" id="pwdC" placeholder="Confirm Password" class="form-control" type="password"onfocus="block_msg('pwdC-msg')" onblur="hide_msg('pwdC-msg')" onkeyup='checkConfirm()'>
+                                </div>
+                            </div>
+                            <div id="pwdC-msg">
+
+                                    <h4>Password confirmation must be identical to the original one </h4>
+                                   
+                                </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">E-Mail</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-envelope"></i>
+                                    </span>
+                                    <input name="email" id="femail" placeholder="E-Mail Address" class="form-control" type="text" onfocus="block_msg('email-msg')" onblur="hide_msg('email-msg')" onkeyup='checkEmail()'>
+                                </div>
+                            </div>
+
+                                <div id="email-msg">
+
+                                    <h4 id="email_msg">Email form must be xxxx@something.* </h4>
+                                   
+                                </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"></label>
+                            <div class="col-md-4">
+                               
+                                <button type="submit" class="btn btn-warning" onclick="validate_all()">SUBMIT<span class="glyphicon glyphicon-send"></span</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <footer class="page-footer font-small special-color-dark pt-4">
+        <br>
+        <div class="container">
+
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-fb mx-1">
+                        <i class="fa fa-facebook"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1">
+                        <i class="fa fa-twitter"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-gplus mx-1">
+                        <i class="fa fa-google-plus"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-li mx-1">
+                        <i class="fa fa-linkedin"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-dribbble mx-1">
+                        <i class="fa fa-dribbble"> </i>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <div class="footer-copyright text-center py-3">
+           
+
+        </div>
+    </footer>
+</body>
+
+</html>
